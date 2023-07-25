@@ -13,7 +13,7 @@ export const router= createBrowserRouter(
     [
         {
             path:'/',
-            element: <HomePage/>
+            element: <Homepage/>
         },
         {
             path:'/loginpage',
@@ -26,7 +26,7 @@ export const router= createBrowserRouter(
 
         },
         {
-            path:'/prouctlistingpage',
+            path:'/productlistingpage',
             element:<Productlistingpage/>
 
         },
