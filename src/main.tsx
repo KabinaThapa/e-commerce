@@ -7,7 +7,7 @@ import { router } from './routes/router.tsx'
 import { Provider } from 'react-redux'
 import { store } from './app/store.tsx';
 import {ApiProvider}from'@reduxjs/toolkit/query/react'
-import { fetchapi } from './features/apifetchSlice.tsx'
+import { fetchapi } from './features/productSlice.tsx'
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
