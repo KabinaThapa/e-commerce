@@ -1,6 +1,10 @@
 import React from 'react'
 import {useGetProductsQuery} from '../features/productSlice'
 import { useParams,Link } from 'react-router-dom'
+import { useDispatch } from 'react-redux'
+import { addToCart } from '../features/cartListSlice'
+import Navbar from './../components/navbar';
+
 
 const productlistingpage = () => {
   const{category}=useParams()
@@ -8,12 +12,17 @@ const productlistingpage = () => {
   console.log(data)
   const filterProducts=data? data.filter((item)=>item.category===category):[]
   console.log(filterProducts)
+  const dispatch =useDispatch()
+  const handleCart=(item)=>{
+    dispatch(addToCart(item))
+  }
   
   
   return (
     <>
     
     <div className='w-full h-screen bg-stone-200 grid grid-cols-3 gap-4'>
+      <Navbar/>
       
       {filterProducts && filterProducts.map((item)=>(
        
@@ -25,7 +34,7 @@ const productlistingpage = () => {
        <li>{<img src={item.image} width='150px' height='150'/>}</li> 
        <li>{item.price}</li> 
        </Link>
-       <button>+</button>
+       <button onClick={()=>handleCart(item)} >+</button>
        
        </ul>
        </div>

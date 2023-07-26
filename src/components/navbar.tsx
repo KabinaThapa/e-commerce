@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 const navbar = () => {
   return (
@@ -12,7 +13,7 @@ const navbar = () => {
     <div>
         <ul className='flex justify-around w-96'>
             <li>search</li>
-            <li>wishlist</li>
+            <Link to='/cartpage'>wishlist</Link>
             <li>shoppingcart</li>
             <li>Login</li>
         </ul>
