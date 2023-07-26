@@ -3,6 +3,7 @@ import {useGetProductsQuery,useGetProductCategoriesNameQuery, useGetProductsCate
 
 import Navbar from './../components/navbar';
 import { Link } from 'react-router-dom';
+import img from'../assets/de17b27a-image-1.png'
 
 const homepage = () => {
   //const {data:products}=useGetProductsQuery()
@@ -12,12 +13,14 @@ const homepage = () => {
   return (
     <>
     
-    <div className='bg-stone-300 w-full h-screen'>
+    <div className='bg-stone-300 w-full'>
     <Navbar/>
-      <section className='w-[70%] h-[80%] bg-stone-50 mx-auto'></section>
+      <section className='w-[70%] h-full bg-stone-50 mx-auto'>
+        <img className='ml-auto' src={img} width='450px'/>
+      </section>
       
     </div>
-    <div className='w-full h-screen bg-stone-300'>
+    <div className='w-full  bg-stone-300'>
     <section className='w-[70%] h-[90%] mx-auto pt-2'>
     <h1 className='text-3xl'>Our Category</h1>
     <div className=' flex mt-4 border-2 p-4 justify-around'>

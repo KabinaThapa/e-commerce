@@ -9,6 +9,9 @@ export const fetchapi= createApi({
         getProducts: builder.query({
             query:()=>'products'
         }),
+        getProductsID:builder.query({
+            query:(productID)=>`products/${productID}`
+        }),
         getProductsCategories: builder.query({
             query:()=>`/products/categories`
         }),
@@ -19,4 +22,4 @@ export const fetchapi= createApi({
     }),
     
 })
-export const{ useGetProductsQuery,useGetProductCategoriesNameQuery, useGetProductsCategoriesQuery }=fetchapi
+export const{ useGetProductsQuery,useGetProductCategoriesNameQuery, useGetProductsCategoriesQuery, useGetProductsIDQuery }=fetchapi
