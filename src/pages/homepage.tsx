@@ -1,10 +1,14 @@
 import React from 'react'
-import {useGetProductsQuery} from'../features/productSlice'
+import {useGetProductsQuery,useGetProductCategoriesNameQuery, useGetProductsCategoriesQuery} from'../features/productSlice'
+
 import Navbar from './../components/navbar';
+import { Link } from 'react-router-dom';
 
 const homepage = () => {
-  const {data}=useGetProductsQuery()
+  //const {data:products}=useGetProductsQuery()
+  const {data}=useGetProductsCategoriesQuery()
   console.log(data)
+  
   return (
     <>
     
@@ -16,13 +20,18 @@ const homepage = () => {
     <div className='w-full h-screen bg-stone-300'>
     <section className='w-[70%] h-[90%] mx-auto pt-2'>
     <h1 className='text-3xl'>Our Category</h1>
-    <div className='mt-4 border-2 p-4'>
-      <ul className='flex justify-around'>
-        <li><div>Category1</div></li>
-        <li><div>Category2</div></li>
-        <li><div>Category3</div></li>
-        <li><div>Category4</div></li>
-      </ul>
+    <div className=' flex mt-4 border-2 p-4 justify-around'>
+      {data && data.map((item)=>(
+         <ul  key={item}>
+          <li>
+       <Link to={`/category/${item}`} className='text-xl capitalize'>{item}</Link>
+       </li>
+         </ul>
+
+      ))}
+     
+       
+      
     </div>
     </section>
      

@@ -26,8 +26,9 @@ export const router= createBrowserRouter(
 
         },
         {
-            path:'/productlistingpage',
-            element:<Productlistingpage/>
+            path:'/category/:category',
+            element:<Productlistingpage/>,
+            
 
         },
         {
