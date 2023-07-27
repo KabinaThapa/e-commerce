@@ -41,7 +41,7 @@ const initialState:State={
         if(itemtoremove){
         state.items = state.items.filter((item) => item.id !== action.payload);
         state.cartQuantity-=itemtoremove.quantity
-        state.cartAmount-=itemtoremove.price
+        state.cartAmount-=itemtoremove.price * itemtoremove.quantity
         }
       },
       increment:(state,action: PayloadAction<number>)=>{
