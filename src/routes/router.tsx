@@ -13,7 +13,7 @@ export const router= createBrowserRouter(
     [
         {
             path:'/',
-            element: <HomePage/>
+            element: <Homepage/>
         },
         {
             path:'/loginpage',
@@ -26,12 +26,13 @@ export const router= createBrowserRouter(
 
         },
         {
-            path:'/prouctlistingpage',
-            element:<Productlistingpage/>
+            path:'/category/:category',
+            element:<Productlistingpage/>,
+            
 
         },
         {
-            path:'/productdetailpage',
+            path:'/products/:productID',
             element:<Productdetailpage/>
 
         },
