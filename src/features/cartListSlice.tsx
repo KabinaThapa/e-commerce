@@ -4,6 +4,7 @@ interface Item{
     id:number,
     title:string,
     price:number,
+    quantity:number,
 }
 
 interface State{
@@ -18,9 +19,13 @@ const initialState:State={
     initialState,
     reducers:{
         addToCart:(state,action: PayloadAction<Item>)=>{
-           
+            const existingItem=state.items.find((item)=>item.id===action.payload.id)
+            if(existingItem){
+                existingItem.quantity+=1
+            }
+           else{
               
-            state.items.push(action.payload)
+            state.items.push({...action.payload, quantity:1})}
          
         
     },
