@@ -2,7 +2,7 @@ import React from 'react'
 import {useGetProductsQuery} from '../features/productSlice'
 import { useParams,Link } from 'react-router-dom'
 import { useDispatch } from 'react-redux'
-import { addToCart } from '../features/cartListSlice'
+import {  addToCart } from '../features/cartListSlice'
 import Navbar from './../components/navbar';
 
 

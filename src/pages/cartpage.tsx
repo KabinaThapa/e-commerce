@@ -1,11 +1,12 @@
 import React from 'react'
 import { useSelector} from 'react-redux'
-import { RootState } from '../app/store'
+
 import Navbar from './../components/navbar';
+import {RootState} from '../app/store'
 
 const cartpage = () => {
-  const cartItems=useSelector((state:RootState)=>state.cart.cartItem)
-  console.log(cartItems)
+  const items=useSelector((state:RootState)=>state.cart.items)
+  console.log(items)
   return (
     <>
     <Navbar/>
@@ -13,7 +14,7 @@ const cartpage = () => {
 
      
       
-      {cartItems?.map((item)=>(
+      {items.map((item)=>(
         <li key={item.id}>
           <p>{item.title}</p>
           <p></p>

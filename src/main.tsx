@@ -13,11 +13,12 @@ import { fetchapi } from './features/productSlice.tsx'
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
     <Provider store={store}>
-      <ApiProvider api={fetchapi}>
+    
+      
         
     <RouterProvider router={router}/>
    
-    </ApiProvider>
+    
     </Provider>
    
   </React.StrictMode>,
