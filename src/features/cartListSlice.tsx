@@ -1,5 +1,6 @@
 import { createSlice} from '@reduxjs/toolkit'
 import type { PayloadAction } from '@reduxjs/toolkit'
+import { toast } from 'react-toastify'
 export interface Item{
     id:number,
     title:string,
@@ -33,7 +34,8 @@ const initialState:State={
         }
         state.cartQuantity+=1
         state.cartAmount+=action.payload.price
-         
+
+         toast.success('Item added to cart!')
         
     },
     removeFromCart: (state, action: PayloadAction<number>) => {
