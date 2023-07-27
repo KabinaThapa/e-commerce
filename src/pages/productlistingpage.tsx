@@ -2,8 +2,9 @@ import React from 'react'
 import {useGetProductsQuery} from '../features/productSlice'
 import { useParams,Link } from 'react-router-dom'
 import { useDispatch } from 'react-redux'
-import {  addToCart } from '../features/cartListSlice'
+import {  Item, addToCart } from '../features/cartListSlice'
 import Navbar from './../components/navbar';
+import { Items, addToWishList } from '../features/wishListSlice'
 
 
 const productlistingpage = () => {
@@ -13,8 +14,11 @@ const productlistingpage = () => {
   const filterProducts=data? data.filter((item)=>item.category===category):[]
   console.log(filterProducts)
   const dispatch =useDispatch()
-  const handleCart=(item)=>{
+  const handleCart=(item:Item)=>{
     dispatch(addToCart(item))
+  }
+  const handleSave=(item:Items)=>{
+    dispatch(addToWishList(item))
   }
   
   
@@ -29,6 +33,7 @@ const productlistingpage = () => {
        
         <div className='border-2 bg-white'>
         <ul key={item.id}>
+          <button onClick={()=>handleSave(item)}>save</button>
         <Link to={`/products/${item.id}`}>
        <li>{item.title}</li> 
 

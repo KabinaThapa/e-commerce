@@ -1,7 +1,12 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import { useSelector } from 'react-redux'
+import { RootState } from '../app/store'
 
 const navbar = () => {
+  const cartQuantity=useSelector((state:RootState)=>state.cart.cartQuantity)
+  
+  
   return (
     <> 
     <div className='flex items-center  justify-around h-24'>
@@ -13,8 +18,8 @@ const navbar = () => {
     <div>
         <ul className='flex justify-around w-96'>
             <li>search</li>
-            <Link to='/cartpage'>wishlist</Link>
-            <li>shoppingcart</li>
+            <Link to='/cartpage'>shoppingcart {cartQuantity}</Link>
+            <Link to='/wishlistpage'>wishlist</Link>
             <li>Login</li>
         </ul>
     </div>

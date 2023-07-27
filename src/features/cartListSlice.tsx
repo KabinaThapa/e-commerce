@@ -1,18 +1,22 @@
 import { createSlice} from '@reduxjs/toolkit'
 import type { PayloadAction } from '@reduxjs/toolkit'
-interface Item{
+export interface Item{
     id:number,
     title:string,
     price:number,
     quantity:number,
 }
 
-interface State{
+export interface State{
     items:Item[],
+    cartQuantity:number,
+    cartAmount:number,
    
 }
 const initialState:State={
-    items:[]
+    items:[],
+    cartQuantity:0,
+    cartAmount:0,
 }
  export const cartListSlice= createSlice({
     name:'cart',
@@ -25,17 +29,27 @@ const initialState:State={
             }
            else{
               
-            state.items.push({...action.payload, quantity:1})}
+            state.items.push({...action.payload, quantity:1})
+        }
+        state.cartQuantity+=1
+        state.cartAmount+=action.payload.price
          
         
     },
     removeFromCart: (state, action: PayloadAction<number>) => {
+        const itemtoremove=state.items.find((item)=>item.id===action.payload)
+        if(itemtoremove){
         state.items = state.items.filter((item) => item.id !== action.payload);
+        state.cartQuantity-=itemtoremove.quantity
+        state.cartAmount-=itemtoremove.price
+        }
       },
       increment:(state,action: PayloadAction<number>)=>{
         const item = state.items.find((item)=>item.id===action.payload)
         if(item){
             item.quantity+=1
+            state.cartQuantity += 1;
+             state.cartAmount += item.price;
         }
 
       },
@@ -43,6 +57,8 @@ const initialState:State={
         const item = state.items.find((item)=>item.id===action.payload)
         if(item && item.quantity>1){
             item.quantity-=1
+            state.cartQuantity -= 1;
+        state.cartAmount -= item.price;
         }
         
       }

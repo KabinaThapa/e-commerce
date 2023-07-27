@@ -7,6 +7,8 @@ import { decrement, increment, removeFromCart } from '../features/cartListSlice'
 
 const cartpage = () => {
   const items=useSelector((state:RootState)=>state.cart.items)
+  const cartQuantity=useSelector((state:RootState)=>state.cart.cartQuantity)
+  const cartAmount=useSelector((state:RootState)=>state.cart.cartAmount)
   const dispatch=useDispatch()
   console.log(items)
   const handleDelete=(id:number)=>{
@@ -34,8 +36,11 @@ const cartpage = () => {
           <button onClick={()=>{handleDecrement(item.id)}}>-</button>
           <p>{item.price}</p>
           <button onClick={()=>{handleDelete(item.id)}}>delete</button>
+         
         </div>
       ))}
+       <p>Total Quantity: {cartQuantity}</p>
+       <p>Total Amount: {cartAmount}</p>
       </div>
       )}
       
