@@ -20,9 +20,10 @@ const productlistingpage = () => {
   
   return (
     <>
-    
-    <div className='w-full h-screen bg-stone-200 grid grid-cols-3 gap-4'>
-      <Navbar/>
+    <div className='w-full h-auto bg-stone-200'>
+    <Navbar/>
+    <div  className=' grid grid-cols-3 gap-4'>
+      
       
       {filterProducts && filterProducts.map((item)=>(
        
@@ -34,12 +35,13 @@ const productlistingpage = () => {
        <li>{<img src={item.image} width='150px' height='150'/>}</li> 
        <li>{item.price}</li> 
        </Link>
-       <button onClick={()=>handleCart(item)} >+</button>
+       <button onClick={()=>handleCart(item)} >Add To Cart</button>
        
        </ul>
        </div>
 
       ))}
+    </div>
     </div>
     </>
   )

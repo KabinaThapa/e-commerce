@@ -32,8 +32,22 @@ const initialState:State={
     removeFromCart: (state, action: PayloadAction<number>) => {
         state.items = state.items.filter((item) => item.id !== action.payload);
       },
+      increment:(state,action: PayloadAction<number>)=>{
+        const item = state.items.find((item)=>item.id===action.payload)
+        if(item){
+            item.quantity+=1
+        }
+
+      },
+      decrement:(state,action: PayloadAction<number>)=>{
+        const item = state.items.find((item)=>item.id===action.payload)
+        if(item && item.quantity>1){
+            item.quantity-=1
+        }
+        
+      }
     
 },
 })
-export const {addToCart, removeFromCart} = cartListSlice.actions
+export const {addToCart, removeFromCart, increment, decrement} = cartListSlice.actions
 export default cartListSlice.reducer
