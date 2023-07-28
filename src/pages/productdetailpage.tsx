@@ -1,6 +1,7 @@
 import React from 'react'
 import { useParams } from 'react-router-dom'
 import { useGetProductsIDQuery } from '../features/productSlice'
+import Navbar from './../components/navbar';
 
 const productdetailpage = () => {
   const{productID}=useParams()
@@ -9,7 +10,8 @@ const productdetailpage = () => {
  
   return (
     <>
-   
+   <div className='w-full h-auto bg-stone-200'>
+    <Navbar/>
       {data ?(
          <div>
       <h1> {data.title}</h1>
@@ -21,7 +23,7 @@ const productdetailpage = () => {
 
       </div>
       ):('')}
-    
+    </div>
     </>
   )
 }

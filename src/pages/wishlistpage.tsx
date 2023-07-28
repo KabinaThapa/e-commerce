@@ -17,6 +17,7 @@ const wishlistpage = () => {
         <div>
           <button onClick={()=>{handleRemove(item.id)}}>Remove</button>
           {item.title}
+          {item.image}
           {item.price}
           </div>
       ))}

@@ -25,20 +25,20 @@ const cartpage = () => {
 
   return (
     <>
-      <div className='w-full h-screen bg-stone-200'>
+      <div className='w-full h-auto bg-stone-200'>
         <Navbar />
         <div className='text-center'>
           {items.length === 0 ? (
-            <p className='flex flex-col justify-center items-center text-3xl mt-8'>
+            <div className='flex flex-col mx-auto justify-center items-center text-3xl h-screen border-2 bg-white w-[75%]'>
               Your Cart is Empty! <TbShoppingCartX size={50} />
-            </p>
+            </div>
           ) : (
             <div className='text-center'>
               <h1 className='text-4xl mb-4'>Your Shopping Cart</h1>
               <p className='2xl'>Total Items: {cartQuantity}</p>
               <table className='w-[90%] mx-auto text-center bg-white mt-6'>
                 <thead >
-                  <tr>
+                  <tr className='mb-12'>
                     <th className='px-4 py-2'>Image</th>
                     <th className='px-4 py-2'>Item</th>
                     <th className='px-4 py-2'>Quantity</th>

@@ -1,11 +1,12 @@
 import React from 'react'
 import {useGetProductsQuery} from '../features/productSlice'
 import { useParams,Link } from 'react-router-dom'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import {  Item, addToCart } from '../features/cartListSlice'
 import Navbar from './../components/navbar';
 import { Items, addToWishList } from '../features/wishListSlice'
-import {GoHeart} from 'react-icons/go'
+import {GoHeart, GoHeartFill} from 'react-icons/go'
+import { RootState } from '../app/store'
 
 
 const productlistingpage = () => {
@@ -15,6 +16,7 @@ const productlistingpage = () => {
   const filterProducts=data? data.filter((item)=>item.category===category):[]
   console.log(filterProducts)
   const dispatch =useDispatch()
+  const items=useSelector((state:RootState)=>state.wishlist.item)
   const handleCart=(item:Item)=>{
     dispatch(addToCart(item))
   }
@@ -34,7 +36,11 @@ const productlistingpage = () => {
        
         <div className='border-2 bg-white'>
         <ul key={item.id}>
-          <button onClick={()=>handleSave(item)}><GoHeart/></button>
+          <button  onClick={()=>handleSave(item)}>
+                      {items.find((items) => items.id === item.id)
+                        ? (<GoHeartFill size={30}/>)
+                        : ( <GoHeart  size={30}/>)
+                    }</button>
         <Link to={`/products/${item.id}`}>
        <li>{item.title}</li> 
 
