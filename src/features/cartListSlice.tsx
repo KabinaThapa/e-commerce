@@ -6,6 +6,7 @@ export interface Item{
     title:string,
     price:number,
     quantity:number,
+    image:string,
 }
 
 export interface State{

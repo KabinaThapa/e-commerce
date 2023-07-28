@@ -19,7 +19,7 @@ const homepage = () => {
         <div className='p-6 w-96 grid grid-rows-3 place-items-center text-lg'>
           <h1 className='text-8xl'>Winter 21'</h1>
           <p>Winter layer season is here. Check out our trendy new winter collection to stay warm in style.</p>
-          <button className='border-2 w-full p-2'>Shop Now</button>
+          <button className=' text-xl border-2 w-full p-2 hover:bg-stone-400 hover:border-none hover:text-white'>Shop Now</button>
         </div>
        
         <img className='relative right-[-8%] ml-auto' src={img} width='450px'/>

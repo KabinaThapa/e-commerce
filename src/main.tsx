@@ -8,6 +8,7 @@ import { Provider } from 'react-redux'
 import { store } from './app/store.tsx';
 import { ToastContainer } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css';
+import Navbar from './components/navbar';
 
 
 
@@ -20,6 +21,7 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
         position='top-right'
         autoClose={3000}/>
     <RouterProvider router={router}/>
+    
    
     
     </Provider>

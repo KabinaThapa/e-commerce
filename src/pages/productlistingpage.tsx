@@ -5,6 +5,7 @@ import { useDispatch } from 'react-redux'
 import {  Item, addToCart } from '../features/cartListSlice'
 import Navbar from './../components/navbar';
 import { Items, addToWishList } from '../features/wishListSlice'
+import {GoHeart} from 'react-icons/go'
 
 
 const productlistingpage = () => {
@@ -33,7 +34,7 @@ const productlistingpage = () => {
        
         <div className='border-2 bg-white'>
         <ul key={item.id}>
-          <button onClick={()=>handleSave(item)}>save</button>
+          <button onClick={()=>handleSave(item)}><GoHeart/></button>
         <Link to={`/products/${item.id}`}>
        <li>{item.title}</li> 
 
