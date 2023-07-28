@@ -19,11 +19,7 @@
     "react-redux": "^8.1.1",
     "react-router-dom": "^6.14.2",
     "react-toastify": "^9.1.3",
-<<<<<<< HEAD
-    "reselect": "^4.1.8"
-=======
     "yup": "^1.2.0"
->>>>>>> 48d3a5defd4be1032ccc1e143f89e0530e99e864
   },
   "devDependencies": {
     "@types/react": "^18.2.15",
