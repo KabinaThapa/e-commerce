@@ -6,8 +6,10 @@ import {RouterProvider} from 'react-router-dom'
 import { router } from './routes/router.tsx'
 import { Provider } from 'react-redux'
 import { store } from './app/store.tsx';
-import {ApiProvider}from'@reduxjs/toolkit/query/react'
-import { fetchapi } from './features/productSlice.tsx'
+import { ToastContainer } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css';
+import Navbar from './components/navbar';
+
 
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
@@ -15,8 +17,11 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
     <Provider store={store}>
     
       
-        
+        <ToastContainer
+        position='top-right'
+        autoClose={3000}/>
     <RouterProvider router={router}/>
+    
    
     
     </Provider>
