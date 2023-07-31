@@ -1,0 +1,6 @@
+.word{
+    background-image: linear-gradient( rgb(210, 34, 7), rgba(225, 116, 43, 0.877));
+    background-clip: text;
+    -webkit-background-clip: text;
+    color:transparent
+}
