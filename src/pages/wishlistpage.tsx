@@ -1,38 +1,55 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { RootState } from "../app/store";
-import { addToWishList, removeFromWishList } from "../features/wishListSlice";
+import { addToWishList, removeFromWishList , Items} from "../features/wishListSlice";
+import Navbar from "../components/navbar";
+import Footer from "../components/footer";
+import { TbShoppingCart } from "react-icons/tb";
+import { addToCart } from "../features/cartListSlice";
 
 const wishlistpage = () => {
   const item = useSelector((state: RootState) => state.wishlist.item);
   const dispatch = useDispatch();
-  const handleRemove = (id: number) => {
-    dispatch(removeFromWishList(id));
+  
+  const handleCart = (item: Items) => {
+    dispatch( addToCart(item));
   };
-
   return (
     <>
-      <div className="p-12 text-4xl"> Wishlist </div>
-      <div className="flex flex-col p-12">
+     <div className="w-full h-auto bg-stone-200">
+      <Navbar/>
+      {item.length===0 ? (
+      <div className="flex flex-col mx-auto justify-center items-center text-3xl h-screen border-2 bg-white w-[75%]">
+              <p className="p-3"> Your WishList is Empty! </p>
+              <TbShoppingCart size={70} />
+            </div>
+      ):(
+      <div className="grid grid-cols-3 gap-4 w-[75%] mx-auto bg-stone-300 text-xl p-4">
         {item.map((item) => (
-          <div>
-            <div className="w-54 h-54 ">
-              {<img src={item.image} width="50px" height="50px" />}
+          <div className="bg-white p-4 h-full">
+            <div className="w-44 h-96 flex items-center mx-auto">
+              {<img src={item.image} width="100%" className="object-contain" />}
             </div>
 
-            <p className="text-base font-medium"> {item.title}</p>
+            <p className=""> {item.title}</p>
 
-            <p className="text-base font-medium"> {item.price}</p>
+            <p className="font-serif">$ {item.price}</p>
             <button
-              className="p-1 mt-3 border-2 border-slate-500 hover:text-red-600 mb-8"
-              onClick={() => {
-                handleRemove(item.id);
-              }}
-            >
-              Remove
-            </button>
+                    className=" mt-auto w-full p-2 rounded-md font-semibold border-stone-500  border-2 hover:bg-stone-500 hover:border-none hover:text-white"
+                    onClick={() => handleCart(item)}
+                  >
+                    Add To Cart
+                  </button>
+            
           </div>
+          
+          
         ))}
+        
+      
+      </div>
+      )}
+      <Footer/>
       </div>
     </>
   );

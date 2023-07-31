@@ -8,6 +8,8 @@ import {
   removeFromCart,
 } from "../features/cartListSlice";
 import { TbShoppingCartX } from "react-icons/tb";
+import Footer from "../components/footer";
+import { AiFillDelete, AiOutlineDelete } from "react-icons/ai";
 
 const cartpage = () => {
   const items = useSelector((state: RootState) => state.cart.items);
@@ -31,7 +33,7 @@ const cartpage = () => {
 
   return (
     <>
-      <div className="w-full h-auto bg-stone-200 p-1">
+      <div className="w-full h-screen overflow-y-auto bg-stone-200">
         <Navbar />
         <div className="text-center">
           {items.length === 0 ? (
@@ -40,33 +42,34 @@ const cartpage = () => {
               <TbShoppingCartX size={70} />
             </div>
           ) : (
-            <div className="text-center">
+            <div>
+              <div className=" border-2 border-stone-500 w-[80%] mx-auto mb-5 p-2 text-center">
               <h1 className="text-4xl mb-4">Your Shopping Cart</h1>
-              <p className="2xl">Total Items: {cartQuantity}</p>
-              <table className="w-[90%] mx-auto text-center bg-white mt-6">
+              <p className="text-2xl">Total Items: {cartQuantity}</p></div>
+              <table className="w-[80%] mx-auto text-left bg-white mt-6 ">
                 <thead>
-                  <tr className="mb-12 text-l">
-                    <th className="px-4 py-2">Image</th>
-                    <th className="px-4 py-2">Item</th>
-                    <th className="px-4 py-2">Quantity</th>
-                    <th className="px-4 py-2">Price</th>
-                    <th className="px-4 py-2">Total</th>
-                    <th className="px-4 py-2">Actions</th>
+                  <tr className=" text-l">
+                    <th className="px-4 py-4">Image</th>
+                    <th className="px-4 py-4">Item</th>
+                    <th className="px-4 py-4">Quantity</th>
+                    <th className="px-4 py-4">Price</th>
+                    <th className="px-4 py-4">Total</th>
+                    <th className="px-4 py-4">Actions</th>
                   </tr>
                 </thead>
                 <tbody>
                   {items.map((item) => (
-                    <tr key={item.id}>
-                      <td className=" px-4 py-2">
+                    <tr key={item.id} className="border-8 pb-4">
+                      <td className=" px-4 py-8 ">
                         <img
                           src={item.image}
-                          width="70px"
-                          height="70px"
+                          width="200px"
+                          
                           alt={item.title}
                         />
                       </td>
-                      <td className=" px-4 py-2">{item.title}</td>
-                      <td className=" px-4 py-2">
+                      <td className=" px-4 py-8">{item.title}</td>
+                      <td className=" px-4 py-8">
                         <div className="border-2 flex bg-stone-100 w-44 justify-around text-xl rounded-sm p-1">
                           <button onClick={() => handleIncrement(item.id)}>
                             +
@@ -77,13 +80,13 @@ const cartpage = () => {
                           </button>
                         </div>
                       </td>
-                      <td className=" px-4 py-2">{item.price}</td>
-                      <td className=" px-4 py-2">
-                        {item.price * item.quantity}
+                      <td className=" px-4 py-8 font-serif"> $ {item.price}</td>
+                      <td className=" px-4 py-8 font-serif">
+                        $ {item.price * item.quantity}
                       </td>
-                      <td className=" px-4 py-2">
+                      <td className=" px-4 py-8">
                         <button onClick={() => handleDelete(item.id)}>
-                          Delete
+                          <AiOutlineDelete size={25}/>
                         </button>
                       </td>
                     </tr>
@@ -91,12 +94,19 @@ const cartpage = () => {
                 </tbody>
               </table>
 
-              <p className="w-full text-xl font-semibold">
-                Total Amount: {cartAmount}
+               <div className="w-[80%] bg-white mx-auto p-4 mt-12 text-xl font-semibold">
+              <p className="w-full  font-serif ">
+                Total Amount: $ {cartAmount}
+        
               </p>
+              <button className=" mt-6 p-2 w-44 text-2xl border-stone-400  border-2 rounded-md hover:bg-stone-500 hover:border-none hover:text-white">
+              Checkout ({cartQuantity})
+            </button>
+              </div>
             </div>
           )}
         </div>
+        <Footer/>
       </div>
     </>
   );
