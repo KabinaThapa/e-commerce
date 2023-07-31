@@ -24,7 +24,7 @@ const Inputfield: React.FC<IInputfield> = ({
         <Field
           type={type}
           name={name}
-          className="flex flex-col bg-transparent  outline-none border-b-2 border-green-700 w-full ml-2"
+          className="flex flex-col bg-transparent  outline-none border-b-2 border-zinc-400 w-full ml-2"
         />
       </div>
       <ErrorMessage name={name} className="text-red-600" component="div" />
