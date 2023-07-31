@@ -13,10 +13,10 @@ const navbar = () => {
 
   return (
     <>
-      <div className="flex items-center  justify-around h-32 pb-12">
+      <div className="flex items-center  justify-around h-32 p-12 text-xl">
         <div>
           <ul>
-            <li className="text-3xl">EleShoply</li>
+            <li className="text-4xl">EleShoply.</li>
           </ul>
         </div>
         <div>
@@ -33,7 +33,7 @@ const navbar = () => {
             </Link>
             <Link to="/loginpage">
               {" "}
-              <button className="flex hover:bg-stone-400 hover:border-none border-2 pl-4 pr-4 p-1 rounded-md">
+              <button className="flex hover:bg-stone-500 hover:border-none hover:text-white border-2 border-stone-400  pl-5 pr-5 p-1 rounded-md">
                 Login
               </button>{" "}
             </Link>

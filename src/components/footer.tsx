@@ -5,10 +5,10 @@ import {FaCcPaypal, FaCcVisa, FaCcMastercard, FaCcDiscover} from "react-icons/fa
 
 const footer = () => {
   return (
-    <div className='w-[75%] mx-auto text-xl pb-12 pt-12'>
-        <h1>EleShoply.</h1>
+    <div className='w-[70%] mx-auto text-xl pb-12 pt-24'>
+        <h1 className='text-2xl'>EleShoply.</h1>
        
-        <div className='flex w-full justify-between'>
+        <div className='flex w-full justify-between mt-2'>
         <h1>Copyright 2020. Powered by WPDEveloper</h1>
         <ul className='flex w-32 justify-around'>
         

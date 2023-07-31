@@ -31,7 +31,7 @@ const cartpage = () => {
 
   return (
     <>
-      <div className="w-full h-auto bg-stone-200">
+      <div className="w-full h-auto bg-stone-200 p-1">
         <Navbar />
         <div className="text-center">
           {items.length === 0 ? (

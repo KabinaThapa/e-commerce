@@ -27,32 +27,32 @@ const productlistingpage = () => {
 
   return (
     <>
-      <div className="w-full h-auto bg-stone-200">
+      <div className="w-full min-h-full bg-stone-200 p-1">
         <Navbar />
-        <div className=" grid grid-cols-3 gap-4 p-2 m-6">
+        <div className=" grid grid-cols-3 gap-4 p-2 m-6 w-[75%] mx-auto border-2 border-black">
           {filterProducts &&
             filterProducts.map((item) => (
-              <div className=" border-2 bg-white pl-5 pb-6 flex justify-center ">
+              <div className=" border-2 bg-blue-500 p-2 flex justify-center">
                 <ul key={item.id}>
                   <button
-                    className="relative right-[-85%] p-2"
+                    className="relative left-[90%] mb-5"
                     onClick={() => handleSave(item)}
                   >
                     {items.find((items) => items.id === item.id) ? (
-                      <GoHeartFill size={30} />
+                      <GoHeartFill size={28} />
                     ) : (
-                      <GoHeart size={30} />
+                      <GoHeart size={28} />
                     )}
                   </button>
                   <Link to={`/products/${item.id}`}>
-                    <li className="text-l font-semibold pl-2 pr-2">
+                    
+
+                    <li className="flex justify-center items-center mb-5">
+                      {<img src={item.image} width="150px" height="150px" />}
+                    </li><li className="text-lg font-semibold">
                       {item.title}
                     </li>
-
-                    <li className="w-96 h-96 flex justify-center items-center ">
-                      {<img src={item.image} width="150px" height="150px" />}
-                    </li>
-                    <li className=" text-base font-medium pb-3 pl-1">
+                    <li className=" text-lg font-medium mb-5">
                       ${item.price}
                     </li>
                   </Link>
