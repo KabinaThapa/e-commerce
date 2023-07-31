@@ -43,7 +43,7 @@ const Loginpage = () => {
   };
 
   return (
-    <div className=" h-screen flex justify-center items-center">
+    <div className="bg-stone-200 h-screen flex justify-center items-center">
       <Formik
         initialValues={initialvalues}
         onSubmit={handleSubmit}
@@ -51,7 +51,7 @@ const Loginpage = () => {
       >
         {() => {
           return (
-            <div className="flex flex-col justify-center items-center w-full h-screen backdrop-blur-sm text-blue-900 font-medium">
+            <div className="flex flex-col justify-center items-center w-full h-screen backdrop-blur-sm  font-medium w-3/5">
               <Form className="w-[50%] h-screen bg-white bg-opacity-50 border-l-2 border-r-2 p-8 flex flex-col justify-center">
                 <h1 className="text-3xl mb-4">LOGIN</h1>
                 <Inputfield
@@ -75,7 +75,10 @@ const Loginpage = () => {
                   LogIn
                 </button>
                 Don't have an Account?
-                <Link to="/loginpage" className="text-center underline mb-4">
+                <Link
+                  to="/registrationpage"
+                  className="text-center underline mb-4"
+                >
                   Sign Up
                 </Link>
                 <p className="text-center mb-4">OR</p>

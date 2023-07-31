@@ -49,14 +49,14 @@ const Registrationpage = () => {
   };
 
   return (
-    <div className="h-screen flex justify-center items-center">
+    <div className="bg-stone-200 h-screen flex justify-center items-center">
       <Formik
         initialValues={initialvalues}
         validationSchema={validationSchema}
         onSubmit={handleSubmit}
       >
-        <div className=" h-screen backdrop-blur-sm">
-          <Form className=" bg-white bg-opacity-50 border-l-2 border-r-2 p-8 flex flex-col justify-center">
+        <div className="flex flex-col justify-center items-center w-full h-screen backdrop-blur-sm  font-medium w-3/5">
+          <Form className="w-[50%] h-screen bg-white bg-opacity-50 border-l-2 border-r-2 p-8 flex flex-col justify-center">
             <h1 className="text-3xl mb-4 mt-4">REGISTER</h1>
             <Inputfield
               type="text"
