@@ -9,6 +9,8 @@ import { FiUser } from "react-icons/fi";
 import { BsLock } from "react-icons/bs";
 import { PiGoogleLogo } from "react-icons/pi";
 import { CiFacebook, CiTwitter } from "react-icons/ci";
+import Navbar from "../components/navbar";
+import Footer from '../components/footer'
 
 const Loginpage = () => {
   const initialvalues = {
@@ -43,7 +45,8 @@ const Loginpage = () => {
   };
 
   return (
-    <div className="bg-stone-200 h-screen flex justify-center items-center">
+    <div className="bg-stone-200  flex flex-col justify-center">
+      <Navbar/>
       <Formik
         initialValues={initialvalues}
         onSubmit={handleSubmit}
@@ -51,8 +54,9 @@ const Loginpage = () => {
       >
         {() => {
           return (
-            <div className="flex flex-col justify-center items-center w-full h-screen backdrop-blur-sm  font-medium w-3/5">
-              <Form className="w-[50%] h-screen bg-white bg-opacity-50 border-l-2 border-r-2 p-8 flex flex-col justify-center">
+            <div className="flex flex-col justify-center items-center  backdrop-blur-sm  font-medium w-3/5 mx-auto">
+              
+              <Form className="w-[50%]  bg-white bg-opacity-50 border-l-2 border-r-2 p-8 flex flex-col justify-center">
                 <h1 className="text-3xl mb-4">LOGIN</h1>
                 <Inputfield
                   type="text"
@@ -69,7 +73,7 @@ const Loginpage = () => {
                 <p className="text-right mb-8">Forgot Password?</p>
                 <button
                   type="submit"
-                  className="border-2 w-full mb-6 border-black p-1 rounded-md text-lg"
+                  className="border-2 w-full mb-6 border-black p-1 rounded-md text-lg  hover:bg-stone-500 hover:border-none hover:text-white"
                 >
                   {" "}
                   LogIn
@@ -77,13 +81,13 @@ const Loginpage = () => {
                 Don't have an Account?
                 <Link
                   to="/registrationpage"
-                  className="text-center underline mb-4"
+                  className="text-center underline mb-4 mt-4"
                 >
                   Sign Up
                 </Link>
                 <p className="text-center mb-4">OR</p>
                 <p className="text-center">Sign Up Using</p>
-                <div className="flex items-center justify-between w-24 mx-auto mt-4">
+                <div className="flex items-center justify-between w-32 mx-auto mt-4">
                   <CiFacebook size={35} />
                   <PiGoogleLogo size={35} />
                   <CiTwitter size={38} />
@@ -94,6 +98,7 @@ const Loginpage = () => {
           );
         }}
       </Formik>
+      <Footer/>
     </div>
   );
 };

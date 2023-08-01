@@ -13,7 +13,8 @@ export const router= createBrowserRouter(
     [
         {
             path:'/',
-            element: <Homepage/>
+            element: <Homepage/>,
+            errorElement:<Errorpage/>,
         },
         {
             path:'/loginpage',
@@ -46,10 +47,6 @@ export const router= createBrowserRouter(
             element:<Cartpage/>
 
         },
-        {
-            
-            element:<Errorpage/>
-
-        },
+        
     ]
 )
