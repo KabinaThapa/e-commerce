@@ -36,7 +36,7 @@ const productlistingpage = () => {
     <>
       <div className="w-full min-h-full bg-stone-200">
         <Navbar />
-        <div className=" border-2 bg-stone-300 w-[75%] mx-auto mb-5 p-4 text-center font-serif ">
+        <div className=" bg-stone-300 w-[75%] mx-auto mb-5 p-4 text-center font-serif ">
         <h1 className="text-4xl capitalize">{category}</h1></div>
         <div className=" grid grid-cols-3 gap-4 p-4 w-[75%] mx-auto border-stone-100">
           {filterProducts &&
@@ -57,7 +57,7 @@ const productlistingpage = () => {
                     
 
                     <li className="flex justify-center">
-                      <div className=" bg-white h-80 w-full rounded-md flex items-center justify-center mb-4">
+                      <div className=" bg-white h-96 w-full rounded-md flex items-center justify-center mb-4">
                       {<img src={item.image} width="200px" className="object-contain" />}
                       </div>
                     </li><li className=" font-semibold text-left">

@@ -22,10 +22,10 @@ const wishlistpage = () => {
     <>
      <div className="w-full h-auto bg-stone-200">
       <Navbar/>
-      <div className=" border-2 bg-stone-300 w-[75%] mx-auto mb-5 p-5 text-center font-serif">
+      <div className=" bg-stone-300 w-[75%] mx-auto mb-5 p-4 text-center font-serif">
         <h1 className="text-4xl capitalize">Your WishList</h1></div>
       {item.length===0 ? (
-      <div className="flex flex-col mx-auto justify-center items-center text-3xl h-screen border-2 bg-white w-[75%]">
+      <div className="flex flex-col mx-auto justify-center items-center text-3xl h-screen bg-white w-[75%]">
               <p className="p-3"> Your WishList is Empty! </p>
               <TbShoppingCart size={70} />
             </div>

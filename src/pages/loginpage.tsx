@@ -56,7 +56,7 @@ const Loginpage = () => {
           return (
             <div className="flex flex-col justify-center items-center  backdrop-blur-sm  font-medium w-3/5 mx-auto">
               
-              <Form className="w-[50%]  bg-white bg-opacity-50 border-l-2 border-r-2 p-8 flex flex-col justify-center">
+              <Form className="w-[50%]  bg-white bg-opacity-50 border-l-2 border-r-2 p-8 flex flex-col justify-center mt-5">
                 <h1 className="text-3xl mb-4">LOGIN</h1>
                 <Inputfield
                   type="text"

@@ -12,7 +12,7 @@ const errorpage = () => {
     
     <div className='bg-stone-300 w-full  '>
     <Navbar/>
-    <div id='errorpage' className=' mx-auto w-[70%] text-center flex  flex-col items-center  justify-center bg-white h-screen' >
+    <div id='errorpage' className=' mx-auto w-[75%] text-center flex  flex-col items-center  justify-center bg-white h-screen' >
       <h1 className='word text-8xl font-bold mb-4 '>OOPs!</h1>
       <p className='text-2xl mb-2'>
         404-Page <i>{error.statusText || error.message}</i>
