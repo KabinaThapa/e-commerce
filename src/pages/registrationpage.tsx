@@ -8,6 +8,8 @@ import "react-toastify/dist/ReactToastify.css";
 import { FiUser } from "react-icons/fi";
 import { BsLock } from "react-icons/bs";
 import { AiOutlineMail } from "react-icons/ai";
+import Navbar from "../components/navbar";
+import Footer from '../components/footer'
 
 const Registrationpage = () => {
   const initialvalues = {
@@ -49,14 +51,15 @@ const Registrationpage = () => {
   };
 
   return (
-    <div className="bg-stone-200 h-screen flex justify-center items-center">
+    <div className="bg-stone-200  flex flex-col justify-center">
+      <Navbar/>
       <Formik
         initialValues={initialvalues}
         validationSchema={validationSchema}
         onSubmit={handleSubmit}
       >
-        <div className="flex flex-col justify-center items-center w-full h-screen backdrop-blur-sm  font-medium w-3/5">
-          <Form className="w-[50%] h-screen bg-white bg-opacity-50 border-l-2 border-r-2 p-8 flex flex-col justify-center">
+        <div className="flex flex-col justify-center mx-auto backdrop-blur-sm  font-medium w-3/5">
+          <Form className=" bg-white bg-opacity-50 border-l-2 border-r-2 p-8 flex flex-col justify-center w-[60%] mx-auto mt-8">
             <h1 className="text-3xl mb-4 mt-4">REGISTER</h1>
             <Inputfield
               type="text"
@@ -91,13 +94,14 @@ const Registrationpage = () => {
 
             <button
               type="submit"
-              className="border-2 w-full mb-6 border-black p-1 rounded-md text-lg backdrop-blur-md hover:scale-95"
+              className="border-2  hover:bg-stone-500 hover:border-none hover:text-white w-full mb-6 border-black p-1 rounded-md text-lg backdrop-blur-md hover:scale-95"
             >
               Register
             </button>
           </Form>
         </div>
       </Formik>
+      <Footer/>
     </div>
   );
 };

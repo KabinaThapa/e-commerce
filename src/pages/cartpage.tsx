@@ -43,12 +43,12 @@ const cartpage = () => {
             </div>
           ) : (
             <div>
-              <div className=" border-2 border-stone-500 w-[80%] mx-auto mb-5 p-2 text-center">
+              <div className=" border-2 bg-stone-300 w-[80%] mx-auto mb-5 p-2 text-center font-serif">
               <h1 className="text-4xl mb-4">Your Shopping Cart</h1>
               <p className="text-2xl">Total Items: {cartQuantity}</p></div>
               <table className="w-[80%] mx-auto text-left bg-white mt-6 ">
                 <thead>
-                  <tr className=" text-l">
+                  <tr className=" text-lg ">
                     <th className="px-4 py-4">Image</th>
                     <th className="px-4 py-4">Item</th>
                     <th className="px-4 py-4">Quantity</th>
@@ -70,7 +70,7 @@ const cartpage = () => {
                       </td>
                       <td className=" px-4 py-8">{item.title}</td>
                       <td className=" px-4 py-8">
-                        <div className="border-2 flex bg-stone-100 w-44 justify-around text-xl rounded-sm p-1">
+                        <div className="border-2 flex bg-stone-100 w-44 justify-around  rounded-sm p-1 text-2xl font-serif">
                           <button onClick={() => handleIncrement(item.id)}>
                             +
                           </button>

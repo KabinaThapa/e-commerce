@@ -16,7 +16,7 @@ const navbar = () => {
       <div className="flex items-center  justify-around h-32 p-12 text-xl">
         <div>
           <ul>
-            <li className="text-4xl">EleShoply.</li>
+            <li className="text-4xl font-serif">EleShoply.</li>
           </ul>
         </div>
         <div>

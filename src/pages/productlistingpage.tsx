@@ -32,12 +32,12 @@ const productlistingpage = () => {
     <>
       <div className="w-full min-h-full bg-stone-200">
         <Navbar />
-        <div className=" border-2 border-stone-500 w-[80%] mx-auto mb-5 p-2 text-center">
+        <div className=" border-2 bg-stone-300 w-[80%] mx-auto mb-5 p-2 text-center font-serif">
         <h1 className="text-4xl capitalize">{category}</h1></div>
-        <div className=" grid grid-cols-3 gap-4 p-4 w-[80%] mx-auto bg-stone-400">
+        <div className=" grid grid-cols-3 gap-4 p-4 w-[80%] mx-auto bg-stone-300">
           {filterProducts &&
             filterProducts.map((item) => (
-              <div className="  bg-white drop-shadow-lg shadow-stone-700 p-4 flex flex-col  text-lg h-full text-right">
+              <div className="  bg-white drop-shadow-lg shadow-stone-300 p-4 flex flex-col  text-lg h-full text-right">
                 <ul key={item.id}>
                   <button
                    
