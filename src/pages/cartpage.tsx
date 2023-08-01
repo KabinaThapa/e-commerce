@@ -37,13 +37,13 @@ const cartpage = () => {
         <Navbar />
         <div className="text-center">
           {items.length === 0 ? (
-            <div className="flex flex-col  mx-auto justify-center items-center text-3xl h-screen border-2 bg-white w-[75%]">
+            <div className="flex flex-col  mx-auto justify-center items-center text-3xl h-screen bg-white w-[75%]">
               <p className="p-3"> Your Cart is Empty! </p>
               <TbShoppingCartX size={70} />
             </div>
           ) : (
             <div>
-              <div className=" border-2 bg-stone-300 w-[75%] mx-auto mb-5 p-2 text-center font-serif">
+              <div className=" bg-stone-300 w-[75%] mx-auto mb-5 p-2 text-center font-serif">
               <h1 className="text-4xl mb-4">Your Shopping Cart</h1>
               <p className="text-2xl">Total Items: {cartQuantity}</p></div>
               <table className="w-[75%] mx-auto text-left bg-white mt-6 ">
