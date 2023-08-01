@@ -4,7 +4,7 @@ import { useParams, Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { Item, addToCart } from "../features/cartListSlice";
 import Navbar from "./../components/navbar";
-import { Items, addToWishList } from "../features/wishListSlice";
+import { Items, addToWishList, removeFromWishList } from "../features/wishListSlice";
 import { GoHeart, GoHeartFill } from "react-icons/go";
 import { RootState } from "../app/store";
 import Footer from "../components/footer";
@@ -25,19 +25,23 @@ const productlistingpage = () => {
     dispatch(addToCart(item));
   };
   const handleSave = (item: Items) => {
-    dispatch(addToWishList(item));
+    if (items.find((items) => items.id === item.id)) {
+      dispatch(removeFromWishList(item.id));
+    } else {
+      dispatch(addToWishList(item));
+    }
   };
 
   return (
     <>
       <div className="w-full min-h-full bg-stone-200">
         <Navbar />
-        <div className=" border-2 bg-stone-300 w-[80%] mx-auto mb-5 p-2 text-center font-serif">
+        <div className=" border-2 bg-stone-300 w-[75%] mx-auto mb-5 p-4 text-center font-serif ">
         <h1 className="text-4xl capitalize">{category}</h1></div>
-        <div className=" grid grid-cols-3 gap-4 p-4 w-[80%] mx-auto bg-stone-300">
+        <div className=" grid grid-cols-3 gap-4 p-4 w-[75%] mx-auto border-stone-100">
           {filterProducts &&
             filterProducts.map((item) => (
-              <div className="  bg-white drop-shadow-lg shadow-stone-300 p-4 flex flex-col  text-lg h-full text-right">
+              <div className="  bg-stone-300 rounded-md drop-shadow-lg shadow-stone-950 p-4 flex flex-col  text-lg h-full text-right">
                 <ul key={item.id}>
                   <button
                    
@@ -53,7 +57,7 @@ const productlistingpage = () => {
                     
 
                     <li className="flex justify-center">
-                      <div className=" border-black w-full h-96  flex items-center justify-center">
+                      <div className=" bg-white h-80 w-full rounded-md flex items-center justify-center mb-4">
                       {<img src={item.image} width="200px" className="object-contain" />}
                       </div>
                     </li><li className=" font-semibold text-left">

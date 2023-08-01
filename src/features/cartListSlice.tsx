@@ -45,6 +45,7 @@ const initialState:State={
         state.items = state.items.filter((item) => item.id !== action.payload);
         state.cartQuantity-=itemtoremove.quantity
         state.cartAmount-=itemtoremove.price * itemtoremove.quantity
+        state.cartAmount = parseFloat(state.cartAmount.toFixed(2))
         }
       },
       increment:(state,action: PayloadAction<number>)=>{

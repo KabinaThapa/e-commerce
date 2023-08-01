@@ -43,10 +43,10 @@ const cartpage = () => {
             </div>
           ) : (
             <div>
-              <div className=" border-2 bg-stone-300 w-[80%] mx-auto mb-5 p-2 text-center font-serif">
+              <div className=" border-2 bg-stone-300 w-[75%] mx-auto mb-5 p-2 text-center font-serif">
               <h1 className="text-4xl mb-4">Your Shopping Cart</h1>
               <p className="text-2xl">Total Items: {cartQuantity}</p></div>
-              <table className="w-[80%] mx-auto text-left bg-white mt-6 ">
+              <table className="w-[75%] mx-auto text-left bg-white mt-6 ">
                 <thead>
                   <tr className=" text-lg ">
                     <th className="px-4 py-4">Image</th>

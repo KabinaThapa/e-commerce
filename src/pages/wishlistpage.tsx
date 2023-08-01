@@ -5,6 +5,7 @@ import { addToWishList, removeFromWishList , Items} from "../features/wishListSl
 import Navbar from "../components/navbar";
 import Footer from "../components/footer";
 import { TbShoppingCart } from "react-icons/tb";
+import {AiOutlineCloseCircle} from 'react-icons/ai'
 import { addToCart } from "../features/cartListSlice";
 
 const wishlistpage = () => {
@@ -21,7 +22,7 @@ const wishlistpage = () => {
     <>
      <div className="w-full h-auto bg-stone-200">
       <Navbar/>
-      <div className=" border-2 bg-stone-300 w-[80%] mx-auto mb-5 p-2 text-center font-serif">
+      <div className=" border-2 bg-stone-300 w-[75%] mx-auto mb-5 p-5 text-center font-serif">
         <h1 className="text-4xl capitalize">Your WishList</h1></div>
       {item.length===0 ? (
       <div className="flex flex-col mx-auto justify-center items-center text-3xl h-screen border-2 bg-white w-[75%]">
@@ -29,12 +30,12 @@ const wishlistpage = () => {
               <TbShoppingCart size={70} />
             </div>
       ):(
-      <div className="grid grid-cols-3 gap-4 w-[80%] mx-auto bg-stone-300 text-xl p-4">
+      <div className="grid grid-cols-3 gap-4 w-[75%] mx-auto  text-xl p-4">
         {item.map((item) => (
-          <div className="bg-white p-4 h-full flex flex-col">
-            <button className="hover:text-red-500 hover:font-bold text-2xl text-right"  onClick={()=>{handleRemove(item.id)}}>X</button>
-            <div className="w-44 h-96 flex items-center mx-auto">
-              {<img src={item.image} width="100%" className="object-contain" />}
+          <div className="bg-stone-300 p-4 h-full flex flex-col drop-shadow-lg shadow-stone-950">
+            <button className="hover:text-red-500 hover:font-extrabold text-2xl flex ml-auto mb-4"  onClick={()=>{handleRemove(item.id)}}><AiOutlineCloseCircle size={26}/></button>
+            <div className="w-full h-80 flex items-center mx-auto bg-white mb-4 justify-center rounded-md">
+              {<img src={item.image} width="200px" className="object-contain" />}
             </div>
 
             <p className="mb-1 text-left"> {item.title}</p>

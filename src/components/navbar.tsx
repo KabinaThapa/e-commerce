@@ -5,6 +5,7 @@ import { RootState } from "../app/store";
 import { BsBalloonHeart, BsHeartFill, BsSearch } from "react-icons/bs";
 import { GiShoppingCart } from "react-icons/gi";
 import { GoHeartFill } from "react-icons/go";
+import { AiOutlineMenu } from "react-icons/ai";
 
 const navbar = () => {
   const cartQuantity = useSelector(
@@ -13,8 +14,10 @@ const navbar = () => {
 
   return (
     <>
-      <div className="flex items-center  justify-around h-32 p-12 text-xl">
-        <div>
+      <div className="flex  items-center justify-around h-32 p-12 text-xl ">
+      <div className="relative right-[9.3%] bg-stone-400 p-12 w-44 flex items-center justify-center"><AiOutlineMenu size={30}/></div>
+        <div className="relative right-[14%] flex w-[30%]">
+       
           <ul>
             <li className="text-4xl font-serif">EleShoply.</li>
           </ul>
