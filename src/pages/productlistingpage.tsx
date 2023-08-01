@@ -57,7 +57,7 @@ const productlistingpage = () => {
                     
 
                     <li className="flex justify-center">
-                      <div className=" bg-white h-80 w-full rounded-md flex items-center justify-center mb-4">
+                      <div className=" bg-white h-96 w-full rounded-md flex items-center justify-center mb-4">
                       {<img src={item.image} width="200px" className="object-contain" />}
                       </div>
                     </li><li className=" font-semibold text-left">
